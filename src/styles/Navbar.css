@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+}
+
+body {
+    font-family: 'Fraunces', serif;
+    background: #FFFFFF;
+    background-size: cover;
+    background-position-x: 40px;
+}
+
+/* Hide vertical scrollbar on the whole website */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+a{ 
+    text-decoration: none;
+}
+
+.container-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(134, 134, 134, 0.10);
+    backdrop-filter: blur(50px);
+    padding-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 2rem;
+}
+
+.hamburger-icon {
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+}
+
+.profile-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-logo {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.navbar-logo h2 {
+    padding-left: 0px;
+    font-family: 'Fraunces', serif;
+    font-style: bold;
+    font-weight: 1000;
+    font-size: 32px;
+    color: black;
+}
+
+.navbar-list {
+    display: flex;
+    gap: 3rem;
+}
+
+.navbar-list.show {
+    display: flex;
+    flex-direction: column;
+    background: rgba(134, 134, 134, 0.10);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 80px; 
+    right: 3rem;
+    padding: 1rem;
+    border-radius: 10px;
+    gap: 1rem;
+}
+
+.navbar-list li {
+    list-style: none;
+    color: black;
+    font-weight: 500;
+    font-family: 'Fraunces', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    float: right;
+    display: inline-block;
+    position: relative;
+}
+
+.navbar-list li .active{
+    color: #ef7946ff
+}
+
+.navbar-list li:hover{
+    color: #ef7946ff;
+}
+
+.navbar-list li::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ef7946ff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-list li:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar-list a {
+    text-decoration: none;
+}
+
+.navbar-logo {
+    color: #FFFFFF;
+}
+
+.navbar-logo{
+    text-decoration: none;
+}
+
+.navbar-list li .Collaborate:hover{
+    background: linear-gradient(180deg, #3a6be7 0%, #5F88F3 52.60%, #3a6be7 100%);
+    box-shadow: #121212;
+    color: black;
+}
+
+.container-socmed {
+    display: flex;
+    gap: 2rem;
+}
+
+.container-socmed img {
+    width: 24px;
+    height: 24px;
+    filter: invert(30%) sepia(40%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+    cursor: pointer;
+    gap: 4rem;
+}
+
+@media screen and (max-width: 912px) {
+    .container-navbar {
+         
+        padding: 1rem 1.5rem; 
+    }
+
+  
+    .hamburger-icon {
+        display: block;
+    }
+
+    /* Ubah warna garis hamburger jadi hitam agar terlihat di background putih */
+    .hamburger-line {
+        background: #333; 
+    }
+
+    /* Sembunyikan menu list secara default */
+    .navbar-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0; 
+        background: rgba(255, 255, 255, 0.95); 
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        gap: 2rem;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        z-index: 999;
+    }
+
+    /* Tampilkan menu HANYA jika ada class 'show' (Logic dari React nanti) */
+    .navbar-list.show {
+        display: flex;
+       
+        top: 80px; 
+        right: 0;
+        border-radius: 0 0 20px 20px; 
+    }
+
+    /* Agar hover effect garis bawah tetap jalan tapi di tengah */
+    .navbar-list li::after {
+        left: 50%;
+        transform: translateX(-50%) scaleX(0); 
+        transform-origin: center;
+    }
+
+    .navbar-list li:hover::after {
+        transform: translateX(-50%) scaleX(1);
+    }
+
+    .container-socmed {
+        display: none; 
+    }
+}
+
+/* --- Mobile (Max 680px) --- */
+@media screen and (max-width: 680px) {
+    .container-navbar {
+        padding: 1rem 1.5rem; 
+    }
+
+    .navbar-logo h2 {
+        font-size: 24px; 
+    }
+
+    /* Atur ulang posisi menu dropdown mobile */
+    .navbar-list.show {
+        top: 70px; 
+        padding: 1.5rem;
+    }
+
+    .navbar-list li {
+        font-size: 18px; 
+    }
+}
