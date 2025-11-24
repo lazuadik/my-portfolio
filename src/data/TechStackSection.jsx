@@ -7,4 +7,8 @@ export const techStack = [
     { name: "Tableau", img: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" },
     { name: "PostgreSQL", img: "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" },
     { name: "Keras", img: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg" },
+    { name: "TensorFlow", img: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" },
+    { name: "Git", img: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" },
+    { name: "GitHub", img: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" },
+    { name: "Figma", img: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" },
 ];
