@@ -164,10 +164,6 @@
         align-items: center;
     }
 
-    .container-project {
-        flex: 1 1 100%;
-        max-width: 330px; 
-    }
 
     .container-project-image img {
         height: 200px; 
